@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto Caravelas Portuguesa</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Bootstrap js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="icon" href="./static/img/favicon.jpeg" type="image/jpeg">
+  <!-- CSS Reset e Estilos -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f4f4f4;
+    }
+    header {
+      background: linear-gradient(135deg, #0d47a1, #1976d2);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+    nav ul li {
+      margin: 0 1rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #0d47a1;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #1976d2;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      background: #fff;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    section h2 {
+      margin-bottom: 1rem;
+      color: #0d47a1;
+      border-bottom: 2px solid #1976d2;
+      padding-bottom: 0.3rem;
+    }
+    .lista {
+      list-style: none;
+      margin-left: 1rem;
+    }
+    .lista li {
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .lista li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #1976d2;
+    }
+    .publicacoes li {
+      margin-bottom: 1rem;
+    }
+    .repositorios a {
+      color: #1976d2;
+      text-decoration: none;
+      font-weight: 700;
+      transition: opacity 0.3s;
+    }
+    .repositorios a:hover {
+      opacity: 0.7;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0d47a1;
+      color: #fff;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 0.5rem 0;
+      }
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      height: 30px;
+      width: 30px;
+      /* outline: black; */
+      background-size: 100%, 100%;
+      border-radius: 50%;
+      /* border: 1px solid gray; */
+      background-image: none;
+    }
+
+    .carousel-control-next-icon:after
+    {
+      content: '>';
+      font-size: 18px;
+      color: gray;
+    }
+
+    .carousel-control-prev-icon:after { 
+      content: '<';
+      font-size: 18px;
+      color: gray;
+    }
+
+    .carousel-control-prev-icon:after,
+    .carousel-control-next-icon:after {
+      font-family: 'Glyphicons Halflings';
+      font-size: 18px;
+      color: gray;
+    }
+    .carousel-item {
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      justify-content: center;
+      align-items: center;
+      height: 40vh !important;
+    }
+    .carousel-item img {
+      /* max-height: 100%; */
+      max-width: 100%;
+      height: 39vh;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Projeto Caravelas Portuguesa</h1>
+    <p>Sistema Inteligente de Monitoramento de Espécies Marinhas</p>
+  </header>
+  
+  <!-- Menu de navegação -->
+  <nav>
+    <ul>
+      <li><a href="#objetivos">Objetivos</a></li>
+      <li><a href="#financiadores">Financiadores</a></li>
+      <li><a href="#pesquisadores">Pesquisadores</a></li>
+      <li><a href="#publicacoes">Publicações</a></li>
+      <li><a href="#repositorios">GitHub</a></li>
+      <li><a href="#ferramentas">Ferramentas</a></li>
+    </ul>
+  </nav>
+  
+  <div class="container">
+    <!-- Seção: Objetivos do Projeto -->
+    <section id="objetivos">
+      <h2>Objetivos do Projeto</h2>
+      <p>
+        O projeto tem como objetivo desenvolver um sistema inteligente para o monitoramento de espécies marinhas, 
+        com foco na caravela (<em>Physalia physalis</em>), espécie de alto risco à saúde pública devido à sua potente toxina. 
+        Para isso, serão empregados métodos de extração, curadoria, armazenamento e análise de dados provenientes de redes sociais, 
+        jornais e bases de dados externas, utilizando técnicas de processamento de imagens, processamento de linguagem natural 
+        e aprendizado de máquina. O sistema visa, ainda, divulgar informações sobre a distribuição das espécies, sua importância ecológica, 
+        medidas de conservação e prevenção de acidentes, incentivando a ciência cidadã.
+      </p>
+    </section>
+
+    <!-- Carrossel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+      </ol>
+      <style>
+        .carousel-item {
+          border: 2px solid #ddd;
+          border-radius: 5px;
+        }
+      </style>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./static/img/caravelas_framework.png" class="d-block mx-auto w-50" alt="Imagem 1">
+        </div>
+        <div class="carousel-item">
+          <img src="./static/img/caravelas_tsne.png" class="d-block mx-auto w-50" alt="Imagem 2">
+        </div>
+        <div class="carousel-item">
+          <img src="./static/img/caravela_portuguesa.png" class="d-block mx-auto w-50" alt="Imagem 3">
+        </div>
+        <div class="carousel-item">
+          <img src="./static/img/heatmap_caravela.png" class="d-block mx-auto w-50" alt="Imagem 4">
+        </div>
+        <div class="carousel-item">
+          <img src="./static/img/caravela_portuguesa_2.png" class="d-block mx-auto w-50" alt="Imagem 5">
+        </div>
+        <div class="carousel-item">
+          <img src="./static/img/heatmap_caravela.png" class="d-block mx-auto w-50" alt="Imagem 6">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Próximo</span>
+      </a>
+    </div>
+
+    <br>
+
+    
+    <!-- Seção: Pesquisadores Envolvidos -->
+    <section id="pesquisadores">
+      <h2>Pesquisadores Envolvidos</h2>
+      <ul class="lista">
+        <li><strong>Aurora Trinidad Ramirez Pozo</strong> – Coordenadora (Doutorado em Engenharia Elétrica – UFPR). Áreas: Ciência da Computação, Metodologia e Técnicas da Computação.</li>
+        <li><strong>Carlos Augusto Prolo</strong> – Pesquisador (Doutorado – UFRN). Especialista em Processamento de Linguagem Natural e Análise de Algoritmos.</li>
+        <li><strong>Carmem Satie Hara</strong> – Pesquisadora (Doutorado – UFPR). Especialista em Bancos de Dados e Extração de Informações.</li>
+        <li><strong>Hugo Alberto Perlin</strong> – Pesquisador (Doutorado – IFPR). Atuação em Visão Computacional, Inteligência Artificial e Processamento Gráfico.</li>
+        <li><strong>Martin Alejandro Musicante</strong> – Pesquisador (Doutorado – UFRN). Áreas: Lógicas, Semântica de Programas e Bancos de Dados Semiestruturados.</li>
+        <li><strong>Miodeli Nogueira Junior</strong> – Pesquisador (Doutorado – UFPB). Especialista em Zoologia, Ecologia e Taxonomia de organismos marinhos.</li>
+        <li><strong>Tobias Bernward Bleninger</strong> – Pesquisador (Doutorado – UFPR). Atua na modelagem ambiental e correlação de dados com parâmetros oceanográficos.</li>
+        <li><strong>Wagner Machado Nunan Zola</strong> – Pesquisador (Doutorado – UFPR). Foco em algoritmos de alto desempenho e visualização de dados.</li>
+        <li><strong>Alunos de Graduação:</strong> Leonardo da Silva Camargo, Lisiane Reips, Marcos Vinícius Pontarolo.</li>
+        <li><strong>Alunos de Pós-Graduação:</strong> Bruno Henrique Meyer, Cristina Yassue Morimoto, Heloisa Fernanda Rocha, Lorena Silva do Nascimento.</li>
+      </ul>
+    </section>
+    
+    <!-- Seção: Publicações -->
+    <section id="publicacoes">
+      <h2>Publicações</h2>
+      <ul class="lista publicacoes">
+        <li>
+          <strong>Meyer, Pozo, Zola (2021)</strong> – <em>Improving Barnes-Hut t-SNE Algorithm in Modern GPU Architectures with Random Forest KNN and Simulated Wide-Warp</em>. ACM Journal on Emerging Technologies in Computing Systems (JETC), 17(4), pp. 1–26.
+        </li>
+        <li>
+          <strong>Lima, Pozo, Mendiburu, Santana (2021)</strong> – <em>Automatic Design of Deep Neural Networks Applied to Image Segmentation Problems</em>. EuroGP 2021. LNCS, vol 12691, pp. 98–113.
+        </li>
+        <li>
+          <strong>Sodré, Magalhães, Floriano, Pozo, Hara, Machado (2021)</strong> – <em>COVID-19 Portal: Machine Learning Techniques Applied to the Analysis of Judicial Processes Related to the Pandemic</em>. ADBIS 2021, CCIS, vol 1450, pp. 109–120.
+        </li>
+        <li>
+          <strong>Nogueira, M. et al. (2021)</strong> – <em>Gelatinous Zooplankton</em>. In: J. Pan; P. Pratolongo (Org.). Marine Biology: A Functional Approach to the Oceans and Their Organisms. 1ª ed., CRC Press, 2021, v. 1, p. 144–173.
+        </li>
+      </ul>
+    </section>
+    
+    <!-- Seção: Repositórios GitHub -->
+    <section id="repositorios">
+      <h2>Repositórios GitHub</h2>
+      <p>A seguir, alguns dos repositórios contendo os códigos desenvolvidos para o projeto:</p>
+      <ul class="lista repositorios">
+        <li><a href="https://github.com/RESMA-PPGINF-UFPR-CAPES-PRINT/CaravelasImageAnalysis" target="_blank">Detecção de Caravelas Portuguesas em Imagens</a></li>
+        <li><a href="https://github.com/RESMA-PPGINF-UFPR-CAPES-PRINT/CaravelasTextualAnalysis" target="_blank">Extração de Informações de Textos</a></li>
+        <li><a href="https://github.com/RESMA-PPGINF-UFPR-CAPES-PRINT/CaravelasMultiModalAnalysis" target="_blank">Detecção de Caravelas Portuguesas em Imagens e Textos</a></li>
+        <li><a href="https://github.com/RESMA-PPGINF-UFPR-CAPES-PRINT/Federated-AutoEncoder" target="_blank">Autoencoder Federado para Análise de Dados Distribuídos, e aplicações de xAI</a></li>
+        <li><a href="https://github.com/RESMA-PPGINF-UFPR-CAPES-PRINT/glodap-modeling" target="_blank">Modelo de Previsão de Ocorrências baseado em dados históricos</a></li>
+      </ul>
+    </section>
+    
+    <!-- Seção: Financiadores -->
+    <section id="financiadores">
+      <h2>Financiadores</h2>
+      <ul class="lista">
+        <li><strong>Chamada:</strong> CNPq/MCTI/FNDCT Nº 18/2021 – Faixa B – Grupos Consolidados</li>
+        <li><strong>Recursos:</strong>
+          <ul class="lista">
+            <li><strong>Custeio:</strong> R$ 140.000,00</li>
+            <li><strong>Capital:</strong> R$ 60.000,00</li>
+            <li><strong>Total:</strong> R$ 200.000,00</li>
+          </ul>
+        </li>
+        <li><strong>Instituições Envolvidas:</strong> Universidade Federal do Paraná (UFPR), Universidade Federal do Rio Grande do Norte (UFRN), Universidade Federal da Paraíba (UFPB) e Instituto Federal do Paraná (IFPR).</li>
+      </ul>
+    </section>
+    
+
+    <section id="ferramentas">
+      <h1>Visualizador de aparecimento de Caravelas Portuguesas</h1>
+      <iframe src="./static/pages/heatmap.html" width="100%" height="600px"></iframe>
+      <!-- <iframe src="./static/pages/anim_heatmap.html" width="100%" height="600px"></iframe> -->
+    </section>
+
+  </div>
+  
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Projeto Caravelas Portuguesa. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
